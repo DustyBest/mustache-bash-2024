@@ -1,8 +1,8 @@
+##🚀 Live Site: [dusty_mustache_bash.netlify.app](https://dusty-mustache-bash.netlify.app)
+
 # Dusty Mustache Bash
 
 A React app built with **Create React App**.
-
-🚀 Live Site: [dusty_mustache_bash.netlify.app](https://dusty-mustache-bash.netlify.app)
 
 ---
 
