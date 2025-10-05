@@ -1,0 +1,38 @@
+.hero {
+  position: relative;
+  width: 100%;
+  margin-top: var(--header-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.heroImage {
+  width: 100%;
+  max-width: 1230px;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.heroImageMobile {
+  display: none;
+}
+
+@media (max-width: 1050px) {
+  .hero {
+    margin-top: var(--header-height-mobile);
+  }
+}
+@media (max-width: 680px) {
+  .heroImage {
+    display: none;
+  }
+  .heroImageMobile {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}

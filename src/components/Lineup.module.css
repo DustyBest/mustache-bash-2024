@@ -1,0 +1,32 @@
+.lineup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #FFF;
+}
+
+.lineupImage {
+    width: 100%;
+    max-width: 1230px;
+    height: auto;
+    display: block;
+    object-fit: cover;
+ }
+
+ .lineupImageMobile {
+   width: 100%;
+   height: auto;
+   display: none;
+   object-fit: contain;
+}
+
+@media (max-width: 850px) {
+  .lineupImage {
+    display: none;
+  }
+  
+  .lineupImageMobile {
+    display: block;
+  }
+}

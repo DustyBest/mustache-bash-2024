@@ -1,0 +1,270 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  padding-top: 1.25em;
+  background: #231917;
+  z-index: 9999;
+}
+
+.container {
+  position: relative;
+  max-width: 1230px;
+  padding: 0 1.875em;
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+}
+
+.logo {
+  flex: 0 3 7.375em;
+  width: 7.375em;
+  height: auto;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.dateCallout {
+  margin-left: 1em;
+  padding-top: 0.25em;
+}
+
+.dateCallout p {
+  font-family: var(--font-subhead);
+  font-size: 0.8em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1em;
+  text-transform: uppercase;
+  color: #5472ea;
+  margin: 0 0 0.4em;
+}
+
+.dateCallout:last-child {
+  margin: 0;
+}
+
+.ticketsMobile {
+  text-transform: uppercase;
+  display: none;
+}
+
+.menuIcon {
+  display: none;
+}
+
+.navRight {
+  max-height: 100%;
+  flex: 1 0;
+  padding-top: 0.45em;
+}
+
+.navRight ul {
+  text-align: right;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navRight ul li {
+  display: inline-block;
+  font-size: 0.875em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 0 1em;
+}
+
+.navRight ul li a {
+  font-family: var(--font-subhead);
+  color: #f7f1df;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.ticketsNav {
+  background: #f3e339;
+  padding: 0.5em 2em;
+  border-radius: 400px;
+}
+
+.navRight ul li.ticketsNav a {
+  color: #000;
+  font-size: 1.225em;
+}
+
+.navRight ul li.social {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+
+.navRight ul li.social:last-child {
+  margin-left: 15px;
+}
+
+.navRight ul li.social img {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* MOBILE BREAKPOINT */
+@media (max-width: 1050px) {
+
+  .header {
+    height: var(--header-height-mobile);
+    padding-top: 1.0625em;
+  }
+
+  .nav {
+    align-items: center;
+  }
+
+  .logo {
+    width: 92px;
+    flex: 0 3 92px;
+    align-self: normal;
+  }
+
+  .dateCallout {
+    display: none;
+  }
+
+  /* Hamburger */
+  .menuIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    margin-left: auto;
+    cursor: pointer;
+    z-index: 9999;
+  }
+
+  .menuIcon div {
+    height: 3px;
+    background-color: #f7f1df;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .menuIcon.open div:nth-child(1) {
+    transform: rotate(45deg) translate(0px, 12px);
+  }
+
+  .menuIcon.open div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menuIcon.open div:nth-child(3) {
+    transform: rotate(-45deg) translate(0px, -12px);
+  }
+
+  /* Mobile Tickets pill */
+  .ticketsMobile {
+    display: flex;
+    background: #f3e339;
+    padding: 0.3em 1.2em;
+    border-radius: 400px;
+    height: 100%;
+    margin-left: 20px;
+  }
+
+  .ticketsMobile a {
+    font-family: var(--font-subhead);
+    font-size: 1.225em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000;
+  }
+
+  .navRight ul li.ticketsNav a {
+    color: #000;
+  }
+
+  /* Mobile nav menu overlay (default hidden) */
+  .navRight {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 3em 2em;
+    background: #231917;
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+    visibility: hidden;
+    overflow-y: auto;
+    z-index: 9998;
+  }
+
+  .navRight.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    visibility: visible;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .navRight.closing {
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+    visibility: hidden;
+    transition: none;
+  }
+
+  .navRight.open ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navRight.open ul li {
+    display: block;
+    font-size: 1.75em;
+    margin: 1em 0;
+  }
+
+  .navRight.open ul li a {
+    font-size: inherit;
+    color: #f7f1df;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  .navRight.open ul li.ticketsNav a {
+    color: #000;
+  }
+
+  /* Hide social icons in mobile menu overlay */
+  .navRight.open ul li.social {
+    display: none;
+  }
+}
+
+/* Remove Tickets Soon button from main nav on mobile */
+@media (max-width: 425px) {
+  .ticketsMobile {
+    display: none;
+  }
+}

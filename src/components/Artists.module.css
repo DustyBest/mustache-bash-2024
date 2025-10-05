@@ -1,0 +1,35 @@
+.artists {
+    background-color:#FFF;
+}
+.header {
+    font-family: var(--font-heading), Helvetica, Arial, sans-serif;
+    font-size: 1.875em;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 2em 0 2em;
+    text-align: center;
+}
+.container {
+    position: relative;
+    max-width: 1230px;
+    padding: 0 1.875em;
+    margin: 0 auto;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 2rem;
+}
+
+/* Collapse to single column on smaller screens */
+@media (max-width: 850px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .header {
+    padding: 1em 0 .4em;
+    line-height: 1.25em;
+  }
+}
